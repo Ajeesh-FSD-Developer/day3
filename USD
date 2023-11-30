@@ -1,0 +1,12 @@
+var request = new XMLHttpRequest();
+request.open("GET", "https://restcountries.com/v3.1/all");
+request.send();
+request.onload()
+var res JSON.parse(request.response);
+var currency = res.filter((ele)=>ele.currencies);
+
+console.log(currency);
+
+var cur= currency.map((elem)=>elem.currencies);
+
+console.log(cur);
